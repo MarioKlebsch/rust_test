@@ -4,3 +4,6 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+actix-web = "4"
+quick-xml = "0.40.1"
+env_logger = "0.10.0"

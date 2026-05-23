@@ -1,3 +1,22 @@
+/*
+    This is a test project to check out using of quick-xml with actix-web. 
+
+    Copyright (C) 2026  Mario Klebsch, mario@klebsch.de
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 use actix_web::{get, App, HttpResponse, HttpServer, Responder};
 use actix_web::web::Bytes;
 use quick_xml::events::{BytesDecl, BytesStart, BytesEnd, BytesText, BytesPI, BytesCData, Event};
@@ -5,6 +24,7 @@ use quick_xml::events::attributes::Attribute;
 use quick_xml::Writer;
 use std::io::Cursor;
 
+#[allow(dead_code)]
 trait XmlContainer<W: std::io::Write> {
     fn writer(&mut self) -> &mut Writer<W>;
 
@@ -90,6 +110,7 @@ impl XmlDocument {
         Self { writer_: writer }
     }
 
+    #[allow(dead_code)]
     fn doctype(&mut self, text: &str) -> &mut Self {
         self.writer_.write_event(Event::DocType(BytesText::new(text))).unwrap();
         self

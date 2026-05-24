@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug async-child",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/async-child/target/debug/async-child",
+      "args": [],
+      "cwd": "${workspaceFolder}/async-child",
+      "preLaunchTask": "Build async-child",
+      "stopOnEntry": false,
+      "sourceLanguages": ["rust"]
+    }
+  ]
+}
